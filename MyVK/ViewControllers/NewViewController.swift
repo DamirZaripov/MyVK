@@ -57,6 +57,7 @@ class NewViewController: UITableViewController, DataTransferProtocol, UICollecti
     let newsSequeIdentifier = "createNewsIdentifier"
     let newsCellClass = "NewsTableViewCell"
     let estimatedNewsCellHeight: CGFloat = 100
+    var userEmail = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +74,7 @@ class NewViewController: UITableViewController, DataTransferProtocol, UICollecti
         createRefreshControl()
         testSynhSearch()
         testAsynSearch()
+        print(userEmail)
     }
     
     func prepareForDynamicCellSize() {
@@ -132,7 +134,7 @@ class NewViewController: UITableViewController, DataTransferProtocol, UICollecti
         avatarImageView.image = user.avatar
         nameNavigationItem.title = user.name
         nameLabel.text = user.name
-        surnameLabel.text = user.surname
+        surnameLabel.text = userEmail
         ageLabel.text = String(user.age) + years
         cityLabel.text = user.city
     }
